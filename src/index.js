@@ -2,12 +2,12 @@ const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const startButton = document.querySelector('#start');
 // TODO: Add the missing query selectors:
-const score = document.querySelector(""); // Use querySelector() to get the score element
-const timerDisplay = document.querySelector(""); // use querySelector() to get the timer element.
+const score = document.querySelector("#score"); // Use querySelector() to get the score element
+const timerDisplay = document.querySelector("#timer"); // use querySelector() to get the timer element.
 
 let time = 0;
 let timer;
-let lastHole = 0;
+let lastHole = null;
 let points = 0;
 let difficulty = "hard";
 
@@ -66,8 +66,14 @@ function setDelay(difficulty) {
  * chooseHole(holes) //> returns one of the 9 holes that you defined
  */
 function chooseHole(holes) {
-  // TODO: Write your code here.
+  let hole;
+  do {
+    const index = randomInteger(0, holes.length - 1);
+    hole = holes[index];
+    } while (hole === lastHole);
 
+    lastHole = hole;
+    return hole;
 }
 
 /**

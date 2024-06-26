@@ -196,10 +196,10 @@ function updateTimer() {
 *
 */
 function startTimer() {
-  // TODO: Write your code here
-  // timer = setInterval(updateTimer, 1000);
-  return timer;
-}
+    timer = setInterval(updateTimer, 1000);
+    return timer;
+  }
+
 
 /**
 *

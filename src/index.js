@@ -162,8 +162,11 @@ function toggleVisibility(hole){
 *
 */
 function updateScore() {
-  // TODO: Write your code here
-
+  /* 
+  // Increment the points global variable by 1 point
+  // Update score.textContent with points.
+ */
+}
   return points;
 }
 

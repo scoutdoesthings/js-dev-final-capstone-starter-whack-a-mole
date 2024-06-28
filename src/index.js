@@ -46,9 +46,7 @@ function setDelay(difficulty) {
     return 1000;
   } else if (difficulty === "hard") {
     return randomInteger(600, 1200);
-  } else {
-    throw new Error("Invalid difficulty level");
-  }
+  } 
 }
 
 /**
@@ -98,7 +96,12 @@ function chooseHole(holes) {
 */
 function gameOver() {
   // TODO: Write your code here
-  
+  if(time > 0){
+    let timeoutId = showUp();
+    return timeoutId;
+  } else {
+    let gameStopped = stopGame();
+    return gameStopped;
 }
 
 /**

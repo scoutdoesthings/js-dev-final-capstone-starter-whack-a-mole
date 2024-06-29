@@ -101,7 +101,7 @@ function gameOver() {
     let gameStopped = stopGame();
     return gameStopped;
 }
-
+}
 /**
 *
 * Calls the showAndHide() function with a specific delay and a hole.
@@ -112,7 +112,7 @@ function gameOver() {
 *
 */
 function showUp() {
-  let delay = setDelay(); // TODO: Update so that it uses setDelay()
+  let delay = setDelay('easy'); // TODO: Update so that it uses setDelay()
   const hole = chooseHole(holes);  // TODO: Update so that it use chooseHole()
   return showAndHide(hole, delay);
 }

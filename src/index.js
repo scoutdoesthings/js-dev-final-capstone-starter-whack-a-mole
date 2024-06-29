@@ -95,7 +95,6 @@ function chooseHole(holes) {
 *
 */
 function gameOver() {
-  // TODO: Write your code here
   if(time > 0){
     let timeoutId = showUp();
     return timeoutId;
@@ -162,11 +161,8 @@ function toggleVisibility(hole){
 *
 */
 function updateScore() {
-  /* 
-  // Increment the points global variable by 1 point
-  // Update score.textContent with points.
- */
-}
+ let points = 1;
+ score.textContent = points;
   return points;
 }
 
@@ -178,9 +174,8 @@ function updateScore() {
 *
 */
 function clearScore() {
-  // TODO: Write your code here
-  // points = 0;
-  // score.textContent = points;
+  let points = 0;
+  score.textContent = points;
   return points;
 }
 

@@ -126,22 +126,15 @@ return points;
 }
 
 /**
-*
-* Adds the 'click' event listeners to the moles. See the instructions
-* for an example on how to set event listeners using a for loop.
+* Adds the 'click' event listeners to the moles.
 */
-function setEventListeners(){
-moles.forEach(
-  mole => mole.addEventListener('click', whack)
-);
+function setEventListeners() {
+  moles.forEach(mole => mole.addEventListener('click', whack));
   return moles;
 }
 
 /**
-*
-* This function sets the duration of the game. The time limit, in seconds,
-* that a player has to click on the sprites.
-*
+* This function sets the duration of the game.
 */
 function setDuration(duration) {
   time = duration;
@@ -149,26 +142,24 @@ function setDuration(duration) {
 }
 
 /**
-*
-* This function is called when the game is stopped. It clears the
-* timer using clearInterval. Returns "game stopped".
-*
+* This function is called when the game is stopped.
 */
-function stopGame(){
+function stopGame() {
   // stopAudio(song);  //optional
   clearInterval(timer);
   return "game stopped";
 }
 
 /**
-*
 * This is the function that starts the game when the `startButton`
 * is clicked.
-*
 */
-function startGame(){
-  setDuration(10);
+function startGame() {
+  setDuration(60);
+  clearScore();
+  startTimer();
   showUp();
+  setEventListeners();
   return "game started";
 }
 

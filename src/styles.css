@@ -1,6 +1,6 @@
 html {
   /*background: url('./assets/background.png') no-repeat center center fixed;*/
-  background: url('../assets/mice_assets/BACKGROUND_MICECITY.png') no-repeat center center fixed;
+  background: url('../assets/mice_assets/bg_micecity.png') no-repeat center center fixed;
   box-sizing: border-box;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -119,3 +119,15 @@ h2 {
   top: 10px;
   left: 10px;
 }
+
+@media all and (min-width: 600px)
+    { header 
+    /* Changes the default setting from `block` to `flex`. */
+    display: flex;
+    /* Pushes the items (the title and nav) to the far sides of the 
+       browser with space between them. */
+    justify-content: space-between;
+    /* Adds 0 pixels padding top and bottom, and 30 pixels padding 
+       left and right. */
+    padding: 0 30px;
+  }

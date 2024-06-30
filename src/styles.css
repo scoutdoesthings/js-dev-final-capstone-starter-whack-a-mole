@@ -64,10 +64,10 @@ h2 {
 
 .hole:after {
   display: block;
-  background: url('../assets/mice_assets/mouse_hole.png') bottom center no-repeat;
+  background: url('../assets/mice_assets/mousehole.png') bottom center no-repeat;
   background-size: contain;
   content: '';
-  width: 100%;
+  width: 20%;
   height: 100%;
   position: absolute;
   bottom: -40%;
@@ -76,7 +76,7 @@ h2 {
 }
 
 .mole {
-  background: url('../assets/mice_assets/mousehalf.jpg') bottom center no-repeat;
+  background: url('../assets/mice_assets/mouse.jpg') bottom center no-repeat;
   background-size: 40%;
   position: absolute;
   top: 100%;

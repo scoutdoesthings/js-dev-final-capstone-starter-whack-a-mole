@@ -81,8 +81,9 @@ function showAndHide(hole, delay){
 }
 
 function toggleVisibility(hole) {
-  console.log("Toggling visibility for hole:", hole); // Debugging log
- hole.classList.toggle('show');
+  const mouse = hole.querySelector('.mole');
+  mouse.style.backgroundImage = "url('../assets/mice_assets/mouse.png')";
+  hole.classList.toggle('show');
   return hole;
 }
 
@@ -124,10 +125,12 @@ function startTimer() {
 * clicks on a mole. 
 */
 function whack(event) {
-if (event.target.classList.contains('mole')) {
-  updateScore();
-}
-return points;
+  if (event.target.classList.contains('mole')) {
+    // Change to cat paw image
+    event.target.style.backgroundImage = "url('../assets/mice_assets/cat_paw_sm.png')";
+    updateScore();
+  }
+  return points;
 }
 
 /**

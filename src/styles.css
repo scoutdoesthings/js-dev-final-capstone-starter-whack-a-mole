@@ -33,13 +33,27 @@ h2 {
   -webkit-text-stroke: 1px black;
 }
 
-#start {
-  text-align: center;
-  font-size: 30px;
+#controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
 }
 
-#timer {
+
+#start, #difficulty, #mute {
+  margin: 10px 0;
+}
+
+#timer, #score {
   color: rgb(253, 95, 3);
+  font-size: 20px;
 }
 
 .grid {
@@ -47,7 +61,7 @@ h2 {
   height: 400px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 10px; /* Adjust the gap as needed */
   margin: 0 auto;
   cursor: url('../assets/mice_assets/cat_paw_sm.png'), pointer;

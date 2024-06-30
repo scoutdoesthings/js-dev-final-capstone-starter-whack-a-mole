@@ -5,8 +5,7 @@ const scoreDisplay = document.querySelector('#score');
 const timerDisplay = document.querySelector('#timer');
 const difficultySelect = document.querySelector('#difficulty');
 const controls = document.querySelector('#controls');
-const song = new
-Audio("../assets/mice_assets/paper.mp3");
+const song = new Audio("../assets/mice_assets/paper.mp3");
 
 let time = 60;
 let timer;
@@ -153,13 +152,14 @@ function setDuration(duration) {
 * This function is called when the game is stopped.
 */
 function stopGame() {
-  stopAudio(paper.mp3);  //optional
+  song.pause();
+  song.currentTime = 0;
   clearInterval(timer);
   return "game stopped";
 }
 
-function play() {
-  playAudio(song);
+function playAudio(audio) {
+  audio.play();
 }
 
 /**
@@ -170,10 +170,10 @@ function startGame() {
   setDuration(60);
   clearScore();
   startTimer();
-  playAudio(paper.mp3);
+  playAudio(song);
   showUp();
   setEventListeners();
-  controls.classList.remove('centered');
+  controls.classList.remove('center');
   controls.classList.add('side');
   return "game started";
 }

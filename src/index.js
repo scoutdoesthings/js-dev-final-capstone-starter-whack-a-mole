@@ -96,7 +96,7 @@ function showAndHide(hole, delay){
 
 function toggleVisibility(hole) {
   const mouse = hole.querySelector('.mole');
-  mouse.style.backgroundImage = "url('../assets/mice_assets/mouse2.png')";
+  mouse.style.backgroundImage = `url('${randomMouseImage()}')`;
   hole.classList.toggle('show');
   return hole;
 }

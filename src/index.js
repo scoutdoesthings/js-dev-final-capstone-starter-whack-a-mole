@@ -3,12 +3,14 @@ const moles = document.querySelectorAll('.mole');
 const startButton = document.querySelector('#start');
 const scoreDisplay = document.querySelector('#score'); 
 const timerDisplay = document.querySelector('#timer');
+const difficultySelect = document.querySelector('#difficulty');
+const controls = document.querySelector('#controls');
 
 let time = 60;
 let timer;
 let lastHole = null;
 let points = 0;
-let difficulty = "hard";
+let difficulty = "normal"; //Default difficulty
 
 /**
  * Generates a random integer within a range.
@@ -60,7 +62,7 @@ function gameOver() {
 * Calls the showAndHide() function with a specific delay and a hole.
 */
 function showUp() {
-  let delay = setDelay(difficulty); // Pass the difficulty variable directly
+  let delay = setDelay(difficulty); // Use selected difficulty
   const hole = chooseHole(holes); 
   return showAndHide(hole, delay);
 }
@@ -161,11 +163,16 @@ function startGame() {
   startTimer();
   showUp();
   setEventListeners();
+  controls.classList.remove('centered');
+  controls.classList.add('side');
   return "game started";
 }
 
+// Add event listener for the start button
 startButton.addEventListener("click", () => {
   console.log("Start button clicked!");
+  difficulty = difficultySelect.value; // Get the selected difficulty
+  console.log("Difficulty set to:", difficulty);
   startGame();
 });
 

@@ -14,6 +14,7 @@ let lastHole = null;
 let points = 0;
 let difficulty = "normal"; //Default difficulty
 let isMuted = false;
+let gameRunning = false;
 
 const mouseImages = [
   '../assets/mice_assets/mouse.png',
@@ -77,6 +78,7 @@ function randomMouseImage() {
 * Calls the showAndHide() function with a specific delay and a hole.
 */
 function showUp() {
+  if (!gameRunning) return; // Don't show up if the game is not running
   let delay = setDelay(difficulty); // Use selected difficulty
   const hole = chooseHole(holes); 
   const mole = hole.querySelector('.mole');
@@ -89,7 +91,9 @@ function showAndHide(hole, delay){
   
   const timeoutID = setTimeout(() => {
     toggleVisibility(hole);
-    gameOver();
+    if (gameRunning) {
+      showUp(); // Continue showing up if the game is running
+    }  
   }, delay);
   return timeoutID;
 }
@@ -123,8 +127,7 @@ function updateTimer() {
     time -= 1;
     timerDisplay.textContent = time;
   } else {
-    clearInterval(timer);
-    startButton.textContent = "Start"; // Change the button back to Start
+    stopGame();
   }
   return time;
 }
@@ -174,6 +177,7 @@ function stopGame() {
   song.currentTime = 0;
   clearInterval(timer);
   startButton.textContent = "Start"; // Change the button back to Start
+  holes.forEach(hole => hole.classList.remove('show'));
   return "game stopped";
 }
 
@@ -205,6 +209,11 @@ function playAudio(audio) {
 */
 // Update the startGame function to play the audio based on the mute state
 function startGame() {
+  if (gameRunning) {
+    stopGame();
+    return;
+  }
+  gameRunning = true;
   setDuration(60);
   clearScore();
   startTimer();

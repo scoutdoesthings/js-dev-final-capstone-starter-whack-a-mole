@@ -173,6 +173,7 @@ function setDuration(duration) {
 * This function is called when the game is stopped.
 */
 function stopGame() {
+  gameRunning = false;
   song.pause();
   song.currentTime = 0;
   clearInterval(timer);

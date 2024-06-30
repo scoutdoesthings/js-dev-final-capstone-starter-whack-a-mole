@@ -85,7 +85,6 @@ function showUp() {
 }
 
 function showAndHide(hole, delay){
-  console.log("Showing and hiding hole:", hole); // Debugging log
     toggleVisibility(hole);
   
   const timeoutID = setTimeout(() => {

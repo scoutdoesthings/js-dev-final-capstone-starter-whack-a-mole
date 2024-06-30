@@ -15,6 +15,12 @@ let points = 0;
 let difficulty = "normal"; //Default difficulty
 let isMuted = false;
 
+const mouseImages = [
+  '../assets/mice_assets/mouse.png',
+  '../assets/mice_assets/mouse2.png',
+  '../assets/mice_assets/vestmouse.png'
+];
+
 /**
  * Generates a random integer within a range.
  */
@@ -61,12 +67,20 @@ function gameOver() {
     return gameStopped;
 }
 }
+
+function randomMouseImage() {
+  const index = randomInteger(0, mouseImages.length - 1);
+  return mouseImages[index];
+}
+
 /**
 * Calls the showAndHide() function with a specific delay and a hole.
 */
 function showUp() {
   let delay = setDelay(difficulty); // Use selected difficulty
   const hole = chooseHole(holes); 
+  const mole = hole.querySelector('.mole');
+  mole.style.backgroundImage = `url('${randomMouseImage()}')`;
   return showAndHide(hole, delay);
 }
 

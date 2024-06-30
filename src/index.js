@@ -60,12 +60,13 @@ function gameOver() {
 * Calls the showAndHide() function with a specific delay and a hole.
 */
 function showUp() {
-  let delay = setDelay('difficulty');
+  let delay = setDelay(difficulty); // Pass the difficulty variable directly
   const hole = chooseHole(holes); 
   return showAndHide(hole, delay);
 }
 
 function showAndHide(hole, delay){
+  console.log("Showing and hiding hole:", hole); // Debugging log
     toggleVisibility(hole);
   
   const timeoutID = setTimeout(() => {
@@ -76,6 +77,7 @@ function showAndHide(hole, delay){
 }
 
 function toggleVisibility(hole) {
+  console.log("Toggling visibility for hole:", hole); // Debugging log
  hole.classList.toggle('show');
   return hole;
 }

@@ -148,9 +148,15 @@ function setDuration(duration) {
 * This function is called when the game is stopped.
 */
 function stopGame() {
-  // stopAudio(song);  //optional
+  stopAudio(paper.mp3);  //optional
   clearInterval(timer);
   return "game stopped";
+}
+
+const song = new
+Audio("../assets/mice_assets/paper.mp3");
+function play() {
+  playAudio(song);
 }
 
 /**
@@ -161,6 +167,7 @@ function startGame() {
   setDuration(60);
   clearScore();
   startTimer();
+  playAudio(paper.mp3);
   showUp();
   setEventListeners();
   controls.classList.remove('centered');

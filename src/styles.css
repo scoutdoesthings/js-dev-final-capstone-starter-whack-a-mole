@@ -50,7 +50,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  /*cursor: url('./assets/mallet.png'), pointer;*/
+  cursor: url('../assets/mice_assets/cat_paw_sm.png') pointer;
 }
 
 .hole {

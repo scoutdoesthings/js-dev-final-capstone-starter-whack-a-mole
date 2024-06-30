@@ -1,10 +1,10 @@
 const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const startButton = document.querySelector('#start');
-const score = document.querySelector('#score'); // Use querySelector() to get the score element
-const timerDisplay = document.querySelector('#timer'); // use querySelector() to get the timer element.
+const scoreDisplay = document.querySelector('#score'); 
+const timerDisplay = document.querySelector('#timer');
 
-let time = 0;
+let time = 60;
 let timer;
 let lastHole = null;
 let points = 0;
@@ -21,7 +21,6 @@ function randomInteger(min, max) {
  * Sets the time delay given a difficulty parameter.
  */
 function setDelay(difficulty) {
-
   if (difficulty === "easy") {
     return 1500;
   } else if (difficulty === "normal") {

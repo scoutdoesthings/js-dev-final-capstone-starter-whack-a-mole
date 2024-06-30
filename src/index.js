@@ -6,12 +6,14 @@ const timerDisplay = document.querySelector('#timer');
 const difficultySelect = document.querySelector('#difficulty');
 const controls = document.querySelector('#controls');
 const song = new Audio("../assets/mice_assets/paper.mp3");
+const muteButton = document.querySelector('#mute');
 
 let time = 60;
 let timer;
 let lastHole = null;
 let points = 0;
 let difficulty = "normal"; //Default difficulty
+let isMuted = false;
 
 /**
  * Generates a random integer within a range.
@@ -158,19 +160,40 @@ function stopGame() {
   return "game stopped";
 }
 
+// MUTE BUTTON //
+
+function toggleMute() {
+  isMuted = !isMuted;
+  if (isMuted) {
+    song.pause();
+    muteButton.textContent = 'Unmute';
+  } else {
+    song.play();
+    muteButton.textContent = 'Mute';
+  }
+}
+
+muteButton.addEventListener('click', toggleMute);
+
+
 function playAudio(audio) {
-  audio.play();
+  if (!isMuted) {
+    audio.play();
+  }
 }
 
 /**
 * This is the function that starts the game when the `startButton`
 * is clicked.
 */
+// Update the startGame function to play the audio based on the mute state
 function startGame() {
   setDuration(60);
   clearScore();
   startTimer();
-  playAudio(song);
+  if (!isMuted) {
+    playAudio(song);
+  }
   showUp();
   setEventListeners();
   controls.classList.remove('center');

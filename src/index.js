@@ -107,28 +107,22 @@ function updateTimer() {
 }
 
 /**
-*
-* Starts the timer using setInterval. For each 1000ms (1 second)
-* the updateTimer function get called. This function is already implemented
-*
+* Starts the timer using setInterval.
 */
 function startTimer() {
     timer = setInterval(updateTimer, 1000);
     return timer;
   }
 
-
 /**
-*
 * This is the event handler that gets called when a player
-* clicks on a mole. The setEventListeners should use this event
-* handler (e.g. mole.addEventListener('click', whack)) for each of
-* the moles.
-*
+* clicks on a mole. 
 */
 function whack(event) {
-console.log("whack!")
-  return points;
+if (event.target.classList.contains('mole')) {
+  updateScore();
+}
+return points;
 }
 
 /**

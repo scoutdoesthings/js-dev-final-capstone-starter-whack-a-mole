@@ -5,6 +5,8 @@ const scoreDisplay = document.querySelector('#score');
 const timerDisplay = document.querySelector('#timer');
 const difficultySelect = document.querySelector('#difficulty');
 const controls = document.querySelector('#controls');
+const song = new
+Audio("../assets/mice_assets/paper.mp3");
 
 let time = 60;
 let timer;
@@ -153,8 +155,6 @@ function stopGame() {
   return "game stopped";
 }
 
-const song = new
-Audio("../assets/mice_assets/paper.mp3");
 function play() {
   playAudio(song);
 }

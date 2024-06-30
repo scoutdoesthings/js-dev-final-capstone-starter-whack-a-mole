@@ -78,13 +78,13 @@ h2 {
 
 /*
 .hole:after {
-  display: block;
+  display: internal;
   background: url('../assets/mice_assets/mouse_hole.png') bottom center no-repeat;
   background-size: contain;
   content: '';
-  width: 50%;
-  height: 100%;
-  position: absolute;
+  width: 80%;
+  height: 50%;
+  position: sticky;
   bottom: -40%;
   z-index: 2;
   pointer-events: none;

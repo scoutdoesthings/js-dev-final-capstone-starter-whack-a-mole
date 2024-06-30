@@ -48,7 +48,7 @@ function chooseHole(holes) {
 * Calls the showUp function if time > 0 and stops the game if time = 0.
 */
 function gameOver() {
-  if(time > 0){
+  if(time > 0) {
     let timeoutId = showUp();
     return timeoutId;
   } else {
@@ -162,7 +162,13 @@ function startGame() {
   return "game started";
 }
 
-startButton.addEventListener("click", startGame);
+startButton.addEventListener("click", () => {
+  console.log("Start button clicked!");
+  startGame();
+});
+
+//Debugging console log to ensure event listener is set up
+console.log("Event listener for start button set up!");
 
 
 // Please do not modify the code below.

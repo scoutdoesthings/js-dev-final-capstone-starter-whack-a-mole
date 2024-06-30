@@ -48,7 +48,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 10px; /* Adjust the gap as needed */
+  gap: 20px; /* Adjust the gap as needed */
   margin: 0 auto;
   cursor: url('../assets/mice_assets/cat_paw_sm.png'), pointer;
   justify-content: center; /* Center the grid horizontally */
@@ -67,7 +67,7 @@ h2 {
   background: url('../assets/mice_assets/mousehole.png') bottom center no-repeat;
   background-size: contain;
   content: '';
-  width: 20%;
+  width: 50%;
   height: 100%;
   position: absolute;
   bottom: -40%;

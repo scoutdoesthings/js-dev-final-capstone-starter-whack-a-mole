@@ -96,7 +96,9 @@ function showAndHide(hole, delay){
 
 function toggleVisibility(hole) {
   const mouse = hole.querySelector('.mole');
-  mouse.style.backgroundImage = `url('${randomMouseImage()}')`;
+  if (!hole.classList.contains('show')) {
+    mouse.style.backgroundImage = `url('${randomMouseImage()}')`;
+  }
   hole.classList.toggle('show');
   return hole;
 }
@@ -122,6 +124,7 @@ function updateTimer() {
     timerDisplay.textContent = time;
   } else {
     clearInterval(timer);
+    startButton.textContent = "Start"; // Change the button back to Start
   }
   return time;
 }
@@ -170,6 +173,7 @@ function stopGame() {
   song.pause();
   song.currentTime = 0;
   clearInterval(timer);
+  startButton.textContent = "Start"; // Change the button back to Start
   return "game stopped";
 }
 
@@ -209,8 +213,7 @@ function startGame() {
   }
   showUp();
   setEventListeners();
-  controls.classList.remove('center');
-  controls.classList.add('side');
+  startButton.textContent = "Stop"; // Change the button to Stop
   return "game started";
 }
 

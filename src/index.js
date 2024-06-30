@@ -66,77 +66,42 @@ function showUp() {
   return showAndHide(hole, delay);
 }
 
-/**
-*
-* The purpose of this function is to show and hide the mole given
-* a delay time and the hole where the mole is hidden. The function calls
-* `toggleVisibility` to show or hide the mole. The function should return
-* the timeoutID
-*
-*/
 function showAndHide(hole, delay){
-  // TODO: call the toggleVisibility function so that it adds the 'show' class.
-  toggleVisibility(hole);
+    toggleVisibility(hole);
   
   const timeoutID = setTimeout(() => {
-    // TODO: call the toggleVisibility function so that it removes the 'show' class when the timer times out.
     toggleVisibility(hole);
     gameOver();
-  }, delay); // TODO: change the setTimeout delay to the one provided as a parameter
+  }, delay);
   return timeoutID;
 }
 
-/**
-*
-* Adds or removes the 'show' class that is defined in styles.css to 
-* a given hole. It returns the hole.
-*
-*/
-function toggleVisibility(hole){
-  // TODO: add hole.classList.toggle so that it adds or removes the 'show' class.
+function toggleVisibility(hole) {
  hole.classList.toggle('show');
   return hole;
 }
 
-/**
-*
-* This function increments the points global variable and updates the scoreboard.
-* Use the `points` global variable that is already defined and increment it by 1.
-* After the `points` variable is incremented proceed by updating the scoreboard
-* that you defined in the `index.html` file. To update the scoreboard you can use 
-* `score.textContent = points;`. Use the comments in the function as a guide 
-* for your implementation:
-*
-*/
 function updateScore() {
   points++;
-  score.textContent = points;
+  scoreDisplay.textContent = points;
   return points;
 }
-updateScore();
 
-/**
-*
-* This function clears the score by setting `points = 0`. It also updates
-* the board using `score.textContent = points`. The function should return
-* the points.
-*
-*/
 function clearScore() {
-  let points = 0;
-  score.textContent = points;
+  points = 0;
+  scoreDisplay.textContent = points;
   return points;
 }
 
 /**
-*
 * Updates the control board with the timer if time > 0
-*
 */
 function updateTimer() {
-  if (time > 0){
+  if (time > 0) {
     time -= 1;
     timerDisplay.textContent = time;
+  } else {
+    clearInterval(timer);
   }
   return time;
 }

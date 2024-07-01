@@ -7,27 +7,27 @@
     <link rel="stylesheet" href="./src/styles.css">
   </head>
   <body>
-    <h1 id="title"> Cat vs. Mouse! </h1>
-    <div>
-      <div>
+    <h1 id="title">Cat vs. Mouse!</h1>
+    <div id="game-container">
+      <div id="controls" class="centered">
         <h2>Click start to play!</h2>
-        <div id="controls" class="centered">
-          <button id="start">Start</button>
-          <select id="difficulty">
-              <option value="easy">Easy</option>
-              <option value="normal">Normal</option>
-              <option value="hard">Hard</option>
-          </select>
-          <button id="mute">Mute</button> <!-- Mute button -->
+        <button id="start">Start</button>
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="normal">Normal</option>
+          <option value="hard">Hard</option>
+        </select>
+        <button id="mute">Mute</button>
+      </div>
+      
+      <div id="info-box">
+        <div id="score-container">
+          <h2>Score: <span id="score">0</span></h2>
         </div>
-        
-        <div>
-            <h2>Score: <span id="score">0</span></h2>
+        <div id="timer-container">
+          <h2><span id="timer">60</span> seconds left.</h2>
         </div>
-        <div>
-            <h2><span id="timer">60</span> seconds left.</h2>
-        </div>
-    </div>
+      </div>
         <div class="game">
     <div class="grid">
       <div id="hole0" class="hole">

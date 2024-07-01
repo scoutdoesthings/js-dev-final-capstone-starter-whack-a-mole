@@ -6,6 +6,9 @@ const timerDisplay = document.querySelector('#timer');
 const difficultySelect = document.querySelector('#difficulty');
 const controls = document.querySelector('#controls');
 const song = new Audio("../assets/mice_assets/paper.mp3");
+song.volume = 0.4; // Set volume to 20% (adjust as needed)
+const clickSound = new Audio("../assets/mice_assets/meow.mp3"); // Add your click sound file
+clickSound.volume = .5;
 const muteButton = document.querySelector('#mute');
 
 let time = 60;
@@ -149,6 +152,7 @@ function whack(event) {
     // Change to cat paw image
     event.target.style.backgroundImage = "url('../assets/mice_assets/cat_paw_sm.png')";
     updateScore();
+    clickSound.play(); // Play click sound on successful hit
   }
   return points;
 }

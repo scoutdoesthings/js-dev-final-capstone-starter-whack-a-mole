@@ -11,6 +11,7 @@ html {
 
 body {
   display: flex;
+  max-width: auto;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -18,7 +19,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-h1 {
+h1, header{
   text-align: center;
   font-size: 50px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -52,7 +53,7 @@ h2 {
 }
 
 #timer, #score {
-  color: rgb(253, 95, 3);
+  color: rgb(252, 250, 249);
   font-size: 20px;
 }
 
@@ -95,7 +96,7 @@ h2 {
 
 .mole {
   background: url('../assets/mice_assets/mouse2.jpg') bottom center no-repeat;
-  background-size: 30%;
+  background-size: 20%;
   position: absolute;
   top: 100%;
   width: 100%;

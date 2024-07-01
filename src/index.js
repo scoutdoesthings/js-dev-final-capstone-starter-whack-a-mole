@@ -153,7 +153,7 @@ function startTimer() {
 function whack(event) {
   if (event.target.classList.contains('mole')) {
     // Change to cat paw image
-    event.target.style.backgroundImage = "url('https://raw.githubusercontent.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/mice_assets/cat_paw_sm.png')";
+    event.target.style.backgroundImage = "url('"https://raw.githubusercontent.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/main/assets/mice_assets/cat_paw_sm.png')";
     updateScore();
     clickSound.play(); // Play click sound on successful hit
   }

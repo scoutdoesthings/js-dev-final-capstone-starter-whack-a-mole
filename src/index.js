@@ -5,10 +5,10 @@ const scoreDisplay = document.querySelector('#score');
 const timerDisplay = document.querySelector('#timer');
 const difficultySelect = document.querySelector('#difficulty');
 const controls = document.querySelector('#controls');
-const song = new Audio("./assets/mice_assets/paper.mp3");
+const song = new Audio("https://raw.githubusercontent.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/main/assets/mice_assets/paper.mp3");
 song.volume = 0.4; // Set volume to 40% (adjust as needed)
 
-const clickSound = new Audio("./assets/mice_assets/meow.mp3");
+const clickSound = new Audio("https://raw.githubusercontent.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/main/assets/mice_assets/meow.mp3");
 clickSound.volume = 0.5;
 
 const muteButton = document.querySelector('#mute');
@@ -22,9 +22,9 @@ let isMuted = false;
 let gameRunning = false;
 
 const mouseImages = [
-  './assets/mice_assets/mouse.png',
-  './assets/mice_assets/mouse2.png',
-  './assets/mice_assets/vestmouse.png'
+  'https://raw.githubusercontent.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/main/assets/mice_assets/mouse.png',
+  'https://raw.githubusercontent.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/main/assets/mice_assets/mouse2.png',
+  'https://raw.githubusercontent.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/main/assets/mice_assets/vestmouse.png'
 ];
 
 
@@ -153,7 +153,7 @@ function startTimer() {
 function whack(event) {
   if (event.target.classList.contains('mole')) {
     // Change to cat paw image
-    event.target.style.backgroundImage = "url('"https://raw.githubusercontent.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/main/assets/mice_assets/cat_paw_sm.png')";
+    event.target.style.backgroundImage = "url('https://raw.githubusercontent.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/main/assets/mice_assets/cat_paw_sm.png')";
     updateScore();
     clickSound.play(); // Play click sound on successful hit
   }

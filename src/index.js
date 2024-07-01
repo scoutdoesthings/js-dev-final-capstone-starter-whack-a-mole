@@ -5,10 +5,12 @@ const scoreDisplay = document.querySelector('#score');
 const timerDisplay = document.querySelector('#timer');
 const difficultySelect = document.querySelector('#difficulty');
 const controls = document.querySelector('#controls');
-const song = new Audio("https://github.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/mice_assets/paper.mp3");
-song.volume = 0.4; // Set volume to 20% (adjust as needed)
-const clickSound = new Audio("https://github.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/mice_assets/meow.mp3"); // Add your click sound file
-clickSound.volume = .5;
+const song = new Audio("https://raw.githubusercontent.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/main/assets/mice_assets/paper.mp3");
+song.volume = 0.4; // Set volume to 40% (adjust as needed)
+
+const clickSound = new Audio("https://raw.githubusercontent.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/main/assets/mice_assets/meow.mp3"); // Add your click sound file
+clickSound.volume = 0.5;
+
 const muteButton = document.querySelector('#mute');
 
 let time = 60;
@@ -20,10 +22,11 @@ let isMuted = false;
 let gameRunning = false;
 
 const mouseImages = [
-  'https://github.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/mice_assets/mouse.png',
-  'https://github.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/mice_assets/mouse2.png',
-  'https://github.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/mice_assets/vestmouse.png'
+  'https://raw.githubusercontent.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/main/assets/mice_assets/mouse.png',
+  'https://raw.githubusercontent.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/main/assets/mice_assets/mouse2.png',
+  'https://raw.githubusercontent.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/main/assets/mice_assets/vestmouse.png'
 ];
+
 
 /**
  * Generates a random integer within a range.

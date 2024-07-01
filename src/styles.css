@@ -1,5 +1,5 @@
 html {
-  background: url('../assets/mice_assets/bg_micecity.png') no-repeat center center fixed;
+  background: url('https://github.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/mice_assets/bg_micecity.png') no-repeat center center fixed;
   box-sizing: border-box;
   background-size: cover;
   overflow: hidden;
@@ -84,7 +84,7 @@ h2 {
   grid-template-rows: repeat(3, 1fr);
   gap: 10px; /* Adjust the gap as needed */
   margin: 0 auto;
-  cursor: url('../assets/mice_assets/cat_paw_sm.png'), pointer;
+  cursor: url('https://github.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/mice_assets/cat_paw_sm.png'), pointer;
   justify-content: center; /* Center the grid horizontally */
   align-items: center; /* Center the grid vertically */
 }
@@ -99,7 +99,7 @@ h2 {
 /*
 .hole:after {
   display: internal;
-  background: url('../assets/mice_assets/mouse_hole.png') bottom center no-repeat;
+  background: url('https://github.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/mice_assets/mouse_hole.png') bottom center no-repeat;
   background-size: contain;
   content: '';
   width: 80%;
@@ -114,7 +114,7 @@ h2 {
 
 
 .mole {
-  background: url('../assets/mice_assets/mouse2.jpg') bottom center no-repeat;
+  background: url('https://github.com/scoutdoesthings/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/mice_assets/mouse2.png') bottom center no-repeat;
   background-size: 20%;
   position: absolute;
   top: 100%;
